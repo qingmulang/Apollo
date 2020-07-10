@@ -1,7 +1,7 @@
 package com.lsxiao.apllo.processor
 
 import com.lsxiao.apollo.core.entity.SchedulerProvider
-import io.reactivex.BackpressureStrategy
+import io.reactivex.rxjava3.core.BackpressureStrategy
 import java.util.*
 import javax.lang.model.element.ExecutableElement
 

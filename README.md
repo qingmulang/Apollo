@@ -41,8 +41,8 @@ allProjects {
 
 ```groovy
 dependencies {
-  //Apollo依赖RxAndroid2,请使用最新的版本
-  implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
+  //Apollo依赖RxAndroid3,请使用最新的版本
+  implementation "io.reactivex.rxjava3:rxandroid:3.0.0"
   
   //Apollo的核心库
   implementation "com.github.lsxiao.Apollo:core:1.0.2"

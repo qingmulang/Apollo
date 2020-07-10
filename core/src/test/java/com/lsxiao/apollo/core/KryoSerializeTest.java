@@ -79,9 +79,9 @@ public class KryoSerializeTest extends TestCase {
     public void testEvent() throws Exception {
         Event newEvent = mKryo.deserialize(mKryo.serialize(mEvent), Event.class);
         assertNotNull(newEvent);
-        assertEquals(mEvent.getData(), newEvent.getData());
-        assertEquals(mEvent.getPid(), newEvent.getPid());
-        assertEquals(mEvent.getTag(), newEvent.getTag());
+        assertEquals(mEvent.data, newEvent.data);
+        assertEquals(mEvent.pid, newEvent.pid);
+        assertEquals(mEvent.tag, newEvent.tag);
     }
 
 }

@@ -6,7 +6,6 @@ android {
     def config = parent.ext
 
     compileSdkVersion config.compileSdkVersion
-    buildToolsVersion config.buildToolsVersion
 }
 
 dependencies {

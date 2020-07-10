@@ -1,6 +1,6 @@
 package com.lsxiao.apollo.core.annotations
 
-import io.reactivex.BackpressureStrategy
+import io.reactivex.rxjava3.core.BackpressureStrategy
 
 /**
  * write with Apollo

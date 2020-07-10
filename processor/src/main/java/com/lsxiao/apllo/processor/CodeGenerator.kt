@@ -7,8 +7,8 @@ import com.lsxiao.apollo.core.entity.ApolloBinderImpl
 import com.lsxiao.apollo.core.entity.Event
 import com.lsxiao.apollo.core.entity.SchedulerProvider
 import com.squareup.javapoet.*
-import io.reactivex.BackpressureStrategy
-import io.reactivex.subscribers.DisposableSubscriber
+import io.reactivex.rxjava3.core.BackpressureStrategy
+import io.reactivex.rxjava3.subscribers.DisposableSubscriber
 import java.io.IOException
 import java.util.*
 import javax.annotation.processing.Filer

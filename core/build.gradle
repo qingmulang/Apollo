@@ -3,8 +3,8 @@ apply plugin: 'kotlin'
 apply plugin: 'com.github.dcendents.android-maven'
 
 group = 'com.github.lsxiao'
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -13,7 +13,7 @@ dependencies {
 
 
     def libs = parent.ext.libs
-    compile libs.rxjava2
-    compile libs.kotlin
-    compile libs.kryo
+    implementation libs.rxjava3
+    implementation libs.kotlin
+    implementation libs.kryo
 }

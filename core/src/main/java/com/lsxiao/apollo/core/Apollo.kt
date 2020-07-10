@@ -7,10 +7,10 @@ import com.lsxiao.apollo.core.entity.Event
 import com.lsxiao.apollo.core.entity.SchedulerProvider
 import com.lsxiao.apollo.core.serialize.KryoSerializer
 import com.lsxiao.apollo.core.serialize.Serializable
-import io.reactivex.Flowable
-import io.reactivex.Scheduler
-import io.reactivex.processors.FlowableProcessor
-import io.reactivex.processors.PublishProcessor
+import io.reactivex.rxjava3.core.Flowable
+import io.reactivex.rxjava3.core.Scheduler
+import io.reactivex.rxjava3.processors.FlowableProcessor
+import io.reactivex.rxjava3.processors.PublishProcessor
 import kotlin.properties.Delegates
 
 
@@ -22,8 +22,10 @@ class Apollo private constructor() {
     private val mFlowableProcessor: FlowableProcessor<Event> by lazy {
         PublishProcessor.create<Event>().toSerialized()
     }
+
     //用于保存stick事件
     private val mStickyEventMap: MutableMap<String, Event> = HashMap()
+
     //用于保存SubscriptionBinder
     private val mBindTargetMap: MutableMap<Int, ApolloBinder> = HashMap()
     private var mApolloBinderGenerator: ApolloBinderGenerator by Delegates.notNull()
@@ -277,13 +279,13 @@ class Apollo private constructor() {
                     }
                 }
 
-                if (!stickyEvents.isEmpty()) {
+                return if (!stickyEvents.isEmpty()) {
                     //合并事件序列
-                    return Flowable.fromIterable(stickyEvents)
+                    Flowable.fromIterable(stickyEvents)
                             .flatMap { event -> Flowable.just(eventType.cast(event.data)) }.mergeWith(flowable)
 
                 } else {
-                    return flowable
+                    flowable
                 }
             }
         }
@@ -302,7 +304,7 @@ class Apollo private constructor() {
         fun transfer(event: Event) = synchronized(Apollo.get().mStickyEventMap) {
             if (Apollo.get().mIPCEnable) {
                 if (event.isSticky) {
-                    Apollo.get().mStickyEventMap.put(event.tag, event)
+                    event.tag?.let { Apollo.get().mStickyEventMap.put(it, event) }
                 }
                 Apollo.get().mFlowableProcessor.onNext(event)
             }

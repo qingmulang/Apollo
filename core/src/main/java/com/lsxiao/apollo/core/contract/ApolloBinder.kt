@@ -1,6 +1,6 @@
 package com.lsxiao.apollo.core.contract
 
-import io.reactivex.disposables.Disposable
+import io.reactivex.rxjava3.disposables.Disposable
 
 /**
  * write with Apollo

@@ -1,8 +1,8 @@
 package com.lsxiao.apollo.core.entity
 
 import com.lsxiao.apollo.core.entity.SchedulerProvider.Tag.*
-import io.reactivex.Scheduler
-import io.reactivex.schedulers.Schedulers
+import io.reactivex.rxjava3.core.Scheduler
+import io.reactivex.rxjava3.schedulers.Schedulers
 
 
 /**

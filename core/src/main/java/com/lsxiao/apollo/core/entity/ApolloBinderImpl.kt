@@ -2,8 +2,8 @@ package com.lsxiao.apollo.core.entity
 
 import com.lsxiao.apollo.core.Apollo
 import com.lsxiao.apollo.core.contract.ApolloBinder
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.disposables.Disposable
+import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.rxjava3.disposables.Disposable
 
 /**
  * write with Apollo
